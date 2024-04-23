@@ -1,0 +1,129 @@
+import { useState } from 'react';
+import './todo.css'
+
+
+
+
+
+
+function Todo(){
+
+const[tasks,setTasks]=useState([]);
+const[newTask,setNewTask]=useState('');
+const[test,setTest]=useState([{id:567,completed: false}],[{id:87,completed: false}])
+
+
+
+
+
+
+const toggleTask = (taskId)=>{
+    setTasks((pre)=> {
+
+    let temp =  pre.map((task) => task.id === taskId ? {...task, completed: !task.completed}: task )
+       
+    return(temp);
+   
+    
+    }
+    )}
+
+
+console.log('tasks',tasks)
+
+
+const addTask=()=>{
+    if(newTask.trim() !== '')
+    {
+        setTasks([...tasks,{ id:Date.now(), text: newTask, completed: false}]);
+        setNewTask('');
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const deleteTodo=(text) =>{
+
+    const newTodos=tasks.filter((todo) =>{
+        return todo.id !==text;
+    })
+    setTasks(newTodos);
+
+}
+
+
+
+
+ return (
+    <>
+    
+
+
+
+
+
+    <div className="container">
+        <h1>Simple todo list</h1>
+     <input type="text" placeholder='enter activites' value={newTask} id='todo-input' onChange={(e)=>
+    setNewTask(e.target.value)} />
+ 
+      
+        <button id='add-btn' onClick={addTask}>Add</button>
+
+
+
+
+        {tasks.length>0?(
+  <ul id='ul-todo'>
+  { tasks.map((todo,index)=>
+      <li key={index} > <input type="checkbox" value={todo.text} onChange={()=>{
+        
+        // setTest(tasks);
+        toggleTask(todo.id)
+    
+    
+    }} />  <p className={todo.completed?"s":""}  > {todo.text}    </p>       <button className='list-delete' onClick={ ()=> {
+        deleteTodo(todo.id)
+    
+         } }>Delete</button>  </li>
+      ) }
+  
+  </ul>
+        ):(
+            <div>
+                <p>No tasks found</p>
+            </div>
+        )}
+      
+    </div>
+    </>
+ )
+}
+
+
+
+export default Todo;
