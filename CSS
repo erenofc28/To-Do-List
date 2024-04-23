@@ -1,0 +1,66 @@
+.container{
+    border: solid black;
+    min-height: 200px;
+    width: 600px;
+    margin-top: 20px;
+    padding: 20PX;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+}
+p{
+    margin-top: 10px;
+}
+
+.s{
+   text-decoration: line-through;
+}
+
+h1{
+    
+}
+#todo-input{
+    width: 80%;
+    padding: 6px;
+    border-radius: 5px 0px 0px 5px;
+    
+}
+
+#add-btn{
+    padding: 8px;
+    border-radius: 0px 5px 5px 0px;
+    color: white;
+    background-color: rgb(0, 255, 21);
+    border: rgb(32, 255, 11);
+    width: 60px;
+}
+li{
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    margin-right:40px;
+    margin-left: 0%;
+    width: 95%;
+    text-decoration: none;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    /* border: solid black; */
+    height: 50px;
+    
+}
+
+#ul-todo{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.list-delete{
+ font-size: 16px;   
+ background-color: red;
+ color: white;
+ border: red;
+ padding: 5px;
+ border-radius: 5px 5px 5px 5px;
+ height: 40px;
+
+}
